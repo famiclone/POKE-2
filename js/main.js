@@ -3,6 +3,7 @@ import NPC from './NPC.js';
 import Player from './Player.js';
 import Window from './Window.js';
 import { loadJSON } from './loaders.js';
+import generateMap from './map.js';
 
 const canvas = document.getElementById('canvas'),
       context = canvas.getContext('2d');
@@ -14,10 +15,12 @@ loadJSON('../config.json')
 
 
     const img = new Image();
-    img.src = 'https://i.imgur.com/J16HYxl.png';
+    img.src = './images/sprite.png';
+    //img.src = 'https://i.imgur.com/J16HYxl.png'
 
     const tileset = new Image();
-    tileset.src = 'https://i.imgur.com/5pyhjTP.png';
+    //tileset.src = 'https://i.imgur.com/5pyhjTP.png';
+    tileset.src = './images/tiles.png';
 
     // class Sprite {
     //   constructor(img, width, height, positions) {
@@ -58,22 +61,18 @@ loadJSON('../config.json')
   document.addEventListener('keydown', event => {
     if (event.keyCode === 68) { // 'D'
       player.moveRight(); 
-      punk.moveUp()
     };
 
     if (event.keyCode === 65) { // 'A'
       player.moveLeft();
-      punk.moveRight()
     };
 
     if (event.keyCode === 87) { // 'W'
       player.moveUp()
-      punk.moveDown()
     };
 
     if (event.keyCode === 83) { // 'S'
       player.moveDown()
-      punk.moveLeft()
     };
 
     if (event.keyCode === 13) { // 'Enter'
@@ -90,18 +89,9 @@ loadJSON('../config.json')
 
     context.fillStyle = '#ececec'
     context.fillRect(0, 0, 160, 144)
-
-    for(let x = 0; x < 160; x += config.tileSize) {
-      for (let y = 0; y < 144; y += config.tileSize) {
-        context.drawImage(
-          tileset, 
-          32, 32,
-          16, 16,
-          x, y,
-          16, 16
-        );
-      }
-  };
+    
+    generateMap(context, tileset, config)
+   
 
 
     
