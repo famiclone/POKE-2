@@ -14,6 +14,7 @@ export default function generateMap(context, tileset, config) {
 
   const tiles = {
     'tile': [0, 0],
+    'wall': [64, 0],
     'wreckTile': [16, 0],
     'a': [16, 16],
   };
@@ -36,7 +37,7 @@ export default function generateMap(context, tileset, config) {
           drawTile(context, 'tile', i, r)
           break;
         case 'w':
-          drawTile(context, 'wreckTile', i, r)
+          drawTile(context, 'wall', i, r)
           break;
         case 'a':
           drawTile(context, 'a', i, r)
