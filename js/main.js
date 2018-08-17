@@ -8,7 +8,7 @@ import generateMap from './map.js';
 const canvas = document.getElementById('canvas'),
       context = canvas.getContext('2d');
 
-loadJSON('../config.json')
+loadJSON('./config.json')
   .then(config => {
     canvas.width = config.width;
     canvas.height = config.height;
