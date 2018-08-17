@@ -4,45 +4,51 @@ export default class Person {
     this.image = image;
     this.context = context;
 
-    this.posX = 0;
-    this.posY = 0;
-    this.posSprX = 4;
-    this.posSprY = 2;
+    this.pos = {
+      x: 0,
+      y: 0
+    };
+
+    this.sprPos = {
+      x: 0,
+      y: 0
+    }
+
     this.speed = 16;
 	}
 
   draw() {
     this.context.drawImage(
       this.image,
-      this.posSprX, this.posSprY,
+      this.sprPos.x, this.sprPos.y,
       16, 16,
-      this.posX, this.posY,
+      this.pos.x, this.pos.y,
       16, 16
     )
   }
 
   moveRight() {
     console.log(`${this.name} move right`)
-    this.posX += this.speed;
-    this.posSprX = 54;
+    this.pos.x += this.speed / 2;
+    this.sprPos.x = 48;
   }
 
   moveLeft() {
     console.log(`${this.name} move left`)
-    this.posX -= this.speed;
-    this.posSprX = 38;
+    this.pos.x -= this.speed / 2;
+    this.sprPos.x = 32;
   }
 
   moveUp() {
     console.log(`${this.name} move up`)
-    this.posY -= this.speed;
-    this.posSprX = 22
+    this.pos.y -= this.speed / 2;
+    this.sprPos.x = 16;
   }
 
   moveDown() {
     console.log(`${this.name} move down`)
-    this.posY += this.speed;
-    this.posSprX = 4
+    this.pos.y += this.speed / 2;
+    this.sprPos.x = 0
   }
 };
 

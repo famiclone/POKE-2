@@ -7,12 +7,39 @@ class Player extends Person{
     this.image = image;
     this.context = context;
 
-    this.posX = 0;
-    this.posY = 0;
-    this.posSprX = 4;
-    this.posSprY = 2;
+    this.pos = {
+      x: 0,
+      y: 0
+    },
+    this.sprPos = {
+      x: 0,
+      y: 0
+    }
+
     this.speed = 16;
+
+    this.control()
 	}
+
+  control() {
+    document.addEventListener('keydown', event => {
+      if (event.keyCode === 68) { // 'D'
+        this.moveRight(); 
+      };
+
+      if (event.keyCode === 65) { // 'A'
+        this.moveLeft();
+      };
+
+      if (event.keyCode === 87) { // 'W'
+        this.moveUp()
+      };
+
+      if (event.keyCode === 83) { // 'S'
+        this.moveDown()
+      };
+    });
+  }
 
 
 
