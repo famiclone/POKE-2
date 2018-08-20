@@ -12,40 +12,45 @@ export default class Person {
     this.sprPos = {
       x: 0,
       y: 0
+    };
+
+    this.size = {
+      w: 16,
+      h: 16
     }
 
     this.speed = 16;
 	}
 
-  draw() {
+  draw(x, y) {
     this.context.drawImage(
       this.image,
       this.sprPos.x, this.sprPos.y,
-      16, 16,
-      this.pos.x, this.pos.y,
-      16, 16
+      this.size.w, this.size.h,
+      x || this.pos.x, y || this.pos.y,
+      this.size.w, this.size.h
     )
   }
 
-  moveRight() {
+  moveRight(px) {
     console.log(`${this.name} move right`)
     this.pos.x += this.speed / 2;
     this.sprPos.x = 48;
   }
 
-  moveLeft() {
+  moveLeft(px) {
     console.log(`${this.name} move left`)
     this.pos.x -= this.speed / 2;
     this.sprPos.x = 32;
   }
 
-  moveUp() {
+  moveUp(px) {
     console.log(`${this.name} move up`)
     this.pos.y -= this.speed / 2;
     this.sprPos.x = 16;
   }
 
-  moveDown() {
+  moveDown(px) {
     console.log(`${this.name} move down`)
     this.pos.y += this.speed / 2;
     this.sprPos.x = 0

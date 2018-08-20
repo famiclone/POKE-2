@@ -7,15 +7,6 @@ class Player extends Person{
     this.image = image;
     this.context = context;
 
-    this.pos = {
-      x: 0,
-      y: 0
-    },
-    this.sprPos = {
-      x: 0,
-      y: 0
-    }
-
     this.speed = 16;
 
     this.control()
