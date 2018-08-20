@@ -3,7 +3,8 @@ import NPC from './NPC.js';
 import Player from './Player.js';
 import Window from './Window.js';
 import { loadJSON } from './loaders.js';
-import generateMap from './map.js';
+import { generateMap } from './map.js';
+
 
 import SCP173 from './scp/173.js'
 
@@ -20,33 +21,29 @@ loadJSON('./config.json')
       const level = loc;
 
 
+    const img = new Image();
+    img.src = './images/sprite.png';
+    //img.src = 'https://i.imgur.com/J16HYxl.png'
 
+    const tileset = new Image();
+    //tileset.src = 'https://i.imgur.com/5pyhjTP.png';
+    tileset.src = './images/tiles.png';
 
-const img = new Image();
-img.src = './images/sprite.png';
-//img.src = 'https://i.imgur.com/J16HYxl.png'
+    const player = new Player(context, 'Hero', img);
+    const scp173 = new SCP173(context, 'SCP-173', img);
 
-const tileset = new Image();
-//tileset.src = 'https://i.imgur.com/5pyhjTP.png';
-tileset.src = './images/tiles.png';
+    function loop() {
+      context.clearRect(0, 0, canvas.width, canvas.height);
 
-const player = new Player(context, 'Hero', img);
-const scp173 = new SCP173(context, 'SCP-173', img);
+      generateMap(context, level, tileset, config)
+      scp173.draw(32, 48)
+      player.draw()
 
-console.log(level)
-  
-function loop() {
-  context.clearRect(0, 0, canvas.width, canvas.height);
+      requestAnimationFrame(loop);
+    }
 
-  generateMap(context, level, tileset, config)
-  scp173.draw(32, 48)
-  player.draw()
-
-  requestAnimationFrame(loop);
-}
-
-loop()
-});
+    loop()
+    });
 });
 
 

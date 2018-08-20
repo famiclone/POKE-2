@@ -1,6 +1,8 @@
 import { loadJSON, loadImage} from './loaders.js';
 
-export default function generateMap(context, level, tileset, config) {
+export function generateMap(context, level, tileset, config, callback) {
+  let collisionObjList = [];
+
   for (let layer in level) {
 
         const tiles = {
@@ -29,15 +31,13 @@ export default function generateMap(context, level, tileset, config) {
                 break;
               case 'w':
                 drawTile(context, 'wall', i, r)
+                collisionObjList.push([`${16 * i}`, `${16 * r}`])
                 break;
               case 'a':
                 drawTile(context, 'a', i, r)
                 break;
             }
           })
-          
         });
-
-
-  }
+        }
     }
