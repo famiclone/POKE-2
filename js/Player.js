@@ -1,6 +1,7 @@
 import Person from './Person.js';
 
-class Player extends Person{
+
+export class Player extends Person{
 	constructor(context, name, image) {
     super()
 		this.name = name;
@@ -29,6 +30,8 @@ class Player extends Person{
       if (event.keyCode === 83) { // 'S'
         this.moveDown()
       };
+
+
     });
   }
 
@@ -36,5 +39,3 @@ class Player extends Person{
 
 
 };
-
-export default Player;

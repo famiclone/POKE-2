@@ -1,6 +1,6 @@
 import { loadJSON, loadImage} from './loaders.js';
 
-export function generateMap(context, level, tileset, config, callback) {
+export function generateMap(context, level, tileset, config, area) {
   let collisionObjList = [];
 
   for (let layer in level) {
@@ -23,7 +23,11 @@ export function generateMap(context, level, tileset, config, callback) {
           )
         };
 
-        level[layer].map((row, r) => {
+
+    if (level.level.length <= area) {
+      area = 0;
+    }
+        level[area].map((row, r) => {
           row.map((tile, i) => {
             switch(tile) {
               case 't':
