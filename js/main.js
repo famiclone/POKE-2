@@ -4,6 +4,7 @@ import { Player } from './Player.js';
 import Window from './Window.js';
 import { loadJSON } from './loaders.js';
 import { generateMap } from './map.js';
+import Controller from './Controller.js';
 
 
 import SCP173 from './scp/173.js'
@@ -26,6 +27,7 @@ loadJSON('./config.json')
 
 
 
+
     const img = new Image();
     img.src = './images/sprite.png';
     //img.src = 'https://i.imgur.com/J16HYxl.png'
@@ -36,6 +38,7 @@ loadJSON('./config.json')
 
     const player = new Player(context, 'Hero', img);
     const scp173 = new SCP173(context, 'SCP-173', img);
+    const controller = new Controller(player);
    
     function loop() {
       if(player.pos.x > canvas.width) {

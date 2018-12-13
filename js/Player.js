@@ -13,22 +13,38 @@ export class Player extends Person{
     this.control()
 	}
 
+  playerRight() {
+    this.moveRight(); 
+  }
+
+  playerLeft() {
+    this.moveLeft(); 
+  }
+
+  playerUp() {
+    this.moveUp(); 
+  }
+
+  playerDown() {
+    this.moveDown(); 
+  }
+
   control() {
     document.addEventListener('keydown', event => {
       if (event.keyCode === 68) { // 'D'
-        this.moveRight(); 
+        this.playerRight(); 
       };
 
       if (event.keyCode === 65) { // 'A'
-        this.moveLeft();
+        this.playerLeft();
       };
 
       if (event.keyCode === 87) { // 'W'
-        this.moveUp()
+        this.playerUp()
       };
 
       if (event.keyCode === 83) { // 'S'
-        this.moveDown()
+        this.playerDown()
       };
 
 
