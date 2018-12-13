@@ -1,3 +1,8 @@
+:root {
+	--console-bg: #199AB0;
+	--console-btn: #4E444C;
+}
+
 body {
   min-height: 100vh;
   display: flex;
@@ -6,7 +11,7 @@ body {
   justify-content: space-between;
   padding-bottom: 30%;
   box-sizing: border-box;
-  background-color: #199AB0;
+  background-color: var(--console-bg);
 	padding: 0;
 	margin: 0;
 	padding-bottom: 80px;
@@ -18,26 +23,41 @@ body {
   image-rendering: pixelated;
 }
 
+.controls {
+	width: 100%;
+	padding-left: 8px;
+	padding-right: 8px;
+	box-sizing: border-box;
+}
+
 .controls__wrap {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.controls__wrap-dpad {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	width: 50%;
 }
 
 .controls__wrap button {
-  width: 64px;
-  height: 64px;
-  background-color: #4E444C;
+  width: 55px;
+  height: 55px;
+  background-color: var(--console-btn);
   border: none;
   color: #fff;
   outline: none;
 }
 
 .controls__wrap-lr {
-  width: 190px;
+  width: 160px;
   display: flex;
   justify-content: space-between;
-  background-color: #4E444C;
+  background-color: var(--console-btn);
   position: relative;
   border-radius: 12px;
 }
@@ -46,7 +66,7 @@ body {
   content: "";
   width: 32px;
   height: 32px;
-  background-color: #544d53;
+  background-color: rgba(255, 255, 255, 0.1);
   position: absolute;
   border-radius: 50%;
   top: 50%;
@@ -58,6 +78,21 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.controls__wrap-ab {
+	display: flex;
+	flex-direction: column;
+	width: 50%;
+	padding-left: 64px;
+}
+
+.controls__btn--a, .controls__btn--b {
+	border-radius: 50%;
+}
+
+.controls__btn--a {
+	align-self: flex-end;
 }
 
 .controls__btn::before {

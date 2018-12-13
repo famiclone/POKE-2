@@ -25,7 +25,7 @@ class Controller {
 
 		// Wrapper for D-pad
     const controlsDpad = document.createElement('div');
-    controlsDpad.className = 'controls__wrap-ab';
+    controlsDpad.className = 'controls__wrap-dpad';
 
 		// Wrapper for A/B buttons
     const controlsABWrap = document.createElement('div');
@@ -53,11 +53,13 @@ class Controller {
 
     controlsLRWrap.appendChild(this.btnLeft);
     controlsLRWrap.appendChild(this.btnRight);
-    controlsWrap.appendChild(this.btnUp);
-    controlsWrap.appendChild(controlsLRWrap);
-    controlsWrap.appendChild(this.btnDown);
+
+		controlsDpad.appendChild(this.btnUp);
+    controlsDpad.appendChild(controlsLRWrap);
+    controlsDpad.appendChild(this.btnDown);
     
-    
+   	controlsWrap.appendChild(controlsDpad);
+		controlsWrap.appendChild(controlsABWrap);
 
 
     document.querySelector('.controls').appendChild(controlsWrap);
