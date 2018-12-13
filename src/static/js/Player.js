@@ -30,25 +30,7 @@ export class Player extends Person{
   }
 
   control() {
-    document.addEventListener('keydown', event => {
-      if (event.keyCode === 68) { // 'D'
-        this.playerRight(); 
-      };
 
-      if (event.keyCode === 65) { // 'A'
-        this.playerLeft();
-      };
-
-      if (event.keyCode === 87) { // 'W'
-        this.playerUp()
-      };
-
-      if (event.keyCode === 83) { // 'S'
-        this.playerDown()
-      };
-
-
-    });
   }
 
 
