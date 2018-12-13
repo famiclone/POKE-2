@@ -1,0 +1,22 @@
+{
+  "name": "poke2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "browser-sync ./src --watch",
+    "build": "rm -rf ./build && mkdir build && cp -r ./src/* ./build",
+    "serv": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/htmlporn/poke2.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/htmlporn/poke2/issues"
+  },
+  "homepage": "https://github.com/htmlporn/poke2#readme"
+}

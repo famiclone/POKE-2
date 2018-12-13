@@ -15,26 +15,22 @@ const canvas = document.getElementById('canvas'),
 
 let area = 0;
 
-loadJSON('./config.json')
+loadJSON('./static/js/config.json')
   .then(config => {
     canvas.width = config.width;
     canvas.height = config.height;
 
-    loadJSON('./js/levels/1.json')
+    loadJSON('./static/js/levels/1.json')
     .then(loc => {
       const level = loc;
 
-
-
-
-
     const img = new Image();
-    img.src = './images/sprite.png';
+    img.src = './static/images/sprite.png';
     //img.src = 'https://i.imgur.com/J16HYxl.png'
 
     const tileset = new Image();
     //tileset.src = 'https://i.imgur.com/5pyhjTP.png';
-    tileset.src = './images/tiles.png';
+    tileset.src = './static/images/tiles.png';
 
     const player = new Player(context, 'Hero', img);
     const scp173 = new SCP173(context, 'SCP-173', img);

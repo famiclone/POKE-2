@@ -17,15 +17,15 @@ class Controller {
 
 
     this.btnUp = document.createElement('button');
-    this.btnUp.textContent = 'Up';
+    this.btnUp.className = 'controls__btn controls__btn--up';
 
     this.btnLeft = document.createElement('button');
-    this.btnLeft.textContent = 'Left';
+    this.btnLeft.className = 'controls__btn controls__btn--left';
     this.btnRight = document.createElement('button');
-    this.btnRight.textContent = 'Right';
+    this.btnRight.className = 'controls__btn controls__btn--right';
 
     this.btnDown = document.createElement('button');
-    this.btnDown.textContent = 'Down';
+    this.btnDown.className = 'controls__btn controls__btn--down';
 
     controlsLRWrap.appendChild(this.btnLeft);
     controlsLRWrap.appendChild(this.btnRight);
