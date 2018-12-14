@@ -4,7 +4,7 @@ import { Player } from './Player.js';
 import Window from './Window.js';
 import { loadJSON } from './loaders.js';
 import { generateMap } from './map.js';
-import Controller from './Controller.js';
+import Controller from './controller/Controller.js';
 
 
 import SCP173 from './scp/173.js'
