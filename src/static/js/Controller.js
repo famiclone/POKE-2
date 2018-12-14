@@ -32,20 +32,20 @@ class Controller {
     controlsABWrap.className = 'controls__wrap-ab';
 
 
-    this.btnUp = document.createElement('button');
+    this.btnUp = document.createElement('div');
     this.btnUp.className = 'controls__btn controls__btn--up';
 
-    this.btnLeft = document.createElement('button');
+    this.btnLeft = document.createElement('div');
     this.btnLeft.className = 'controls__btn controls__btn--left';
-    this.btnRight = document.createElement('button');
+    this.btnRight = document.createElement('div');
     this.btnRight.className = 'controls__btn controls__btn--right';
 
-    this.btnDown = document.createElement('button');
+    this.btnDown = document.createElement('div');
     this.btnDown.className = 'controls__btn controls__btn--down';
 
-    this.btnA = document.createElement('button');
+    this.btnA = document.createElement('div');
     this.btnA.className = 'controls__btn controls__btn--a';
-    this.btnB = document.createElement('button');
+    this.btnB = document.createElement('div');
     this.btnB.className = 'controls__btn controls__btn--b';
 
     controlsABWrap.appendChild(this.btnA);
@@ -82,7 +82,7 @@ class Controller {
 	}
 
   touchControlsInit() {
-    document.addEventListener('click', e => {
+    document.addEventListener('touchstart', e => {
       switch(e.target) {
         case this.btnUp:
 					this.pushUp();

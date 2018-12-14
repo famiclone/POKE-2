@@ -54,7 +54,7 @@ body {
 }
 
 .controls__wrap-lr {
-  width: 160px;
+  width: 180px;
   display: flex;
   justify-content: space-between;
   background-color: var(--console-btn);
@@ -78,6 +78,9 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+	width: 60px;
+	height: 60px;
+	background-color: var(--console-btn)
 }
 
 .controls__wrap-ab {
