@@ -1,6 +1,9 @@
-import { loadJSON, loadImage} from './loaders.js';
+function loadJSON(url) {
+  return fetch(url)
+    .then(response => response.json())
+};
 
-export function generateMap(context, level, tileset, config, area) {
+export function generateMap(context, level, tileset, area) {
   let collisionObjList = [];
 
   for (let layer in level) {

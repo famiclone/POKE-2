@@ -1,6 +1,13 @@
 class ControllerUI {
 	constructor() {
-
+    this.btnUp;
+    this.btnLeft;
+    this.btnRight;
+    this.btnDown;
+    this.btnStart;
+    this.btnSelect;
+    this.btnA;
+    this.btnB;
 	}
 
 createTouchControls() {
@@ -19,6 +26,10 @@ createTouchControls() {
 	// Wrapper for A/B buttons
 	const controlsABWrap = document.createElement('div');
 	controlsABWrap.className = 'controls__wrap-ab';
+	
+	// Wrapper for select/start buttons
+	const controlsStartWrap = document.createElement('div');
+	controlsStartWrap.className = 'controls__wrap-start';
 
 
 	this.btnUp = document.createElement('div');
@@ -49,6 +60,7 @@ createTouchControls() {
 
 	controlsWrap.appendChild(controlsDpad);
 	controlsWrap.appendChild(controlsABWrap);
+	controlsWrap.appendChild(controlsStartWrap);
 
 
 	document.querySelector('.controls').appendChild(controlsWrap);
