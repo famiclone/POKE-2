@@ -103,7 +103,7 @@ body {
   width: 16px;
   height: 16px;
   display: inline-block;
-  background-image: url("../images/arrow.svg");
+  background-image: url("/arrow.305c14c2.svg");
   filter: invert(1);
   opacity: 0.1;
 }
@@ -157,3 +157,6 @@ body {
 	width: 320px;
 	height: 288px;
 }
+
+
+/*# sourceMappingURL=/main.c52e0fe2.css.map */
